@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Dr. Ardeleanu · Executive Summary · Iun 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:#E8DDD4;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  -webkit-font-smoothing:antialiased;
+}
+.card{
+  width:100%;
+  max-width:440px;
+  background:#FAF6F2;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 12px 48px rgba(60,20,14,0.16),0 2px 8px rgba(60,20,14,0.08);
+}
+.hdr{
+  background:#7B1C16;
+  padding:36px 32px 30px;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.hdr::after{
+  content:'';
+  position:absolute;
+  top:-50px;right:-50px;
+  width:160px;height:160px;
+  border-radius:50%;
+  background:rgba(242,218,183,0.07);
+}
+.hdr::before{
+  content:'';
+  position:absolute;
+  bottom:-60px;left:-40px;
+  width:140px;height:140px;
+  border-radius:50%;
+  background:rgba(242,218,183,0.05);
+}
+.eyebrow{
+  color:#F2DAB7;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  position:relative;
+  z-index:1;
+}
+.title{
+  font-family:'Playfair Display',serif;
+  color:#fff;
+  font-size:26px;
+  font-weight:700;
+  margin-top:8px;
+  position:relative;
+  z-index:1;
+}
+.subtitle{
+  color:rgba(255,255,255,0.75);
+  font-size:13px;
+  margin-top:6px;
+  position:relative;
+  z-index:1;
+}
+.body{
+  padding:32px;
+}
+.desc{
+  color:#5a4a40;
+  font-size:13.5px;
+  line-height:1.6;
+  margin-bottom:26px;
+}
+.field-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:#8a7e74;
+  margin-bottom:8px;
+  display:block;
+}
+input[type="password"]{
+  width:100%;
+  border:1.5px solid #e4ddd5;
+  border-radius:12px;
+  padding:13px 16px;
+  font-size:15px;
+  font-family:'DM Sans',system-ui,sans-serif;
+  color:#2c1810;
+  background:#fff;
+  outline:none;
+  transition:border-color 0.15s;
+}
+input[type="password"]:focus{
+  border-color:#7B1C16;
+}
+.btn{
+  width:100%;
+  margin-top:16px;
+  background:#7B1C16;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  padding:14px;
+  font-size:14px;
+  font-weight:700;
+  font-family:'DM Sans',system-ui,sans-serif;
+  letter-spacing:0.03em;
+  cursor:pointer;
+  transition:background 0.15s;
+}
+.btn:hover{background:#5c1510;}
+.error{
+  color:#cc2200;
+  font-size:12.5px;
+  font-weight:600;
+  margin-top:12px;
+  display:none;
+}
+.error.show{display:block;}
+
+.links{display:none;flex-direction:column;gap:12px;}
+.links.show{display:flex;}
+.link-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border:1.5px solid #e4ddd5;
+  border-radius:14px;
+  padding:16px 18px;
+  text-decoration:none;
+  transition:border-color 0.15s, transform 0.15s;
+  background:#fff;
+}
+.link-card:hover{border-color:#7B1C16;transform:translateY(-1px);}
+.link-name{
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  font-weight:600;
+  color:#2c1810;
+}
+.link-sub{
+  font-size:11.5px;
+  color:#8a7e74;
+  margin-top:3px;
+}
+.arrow{color:#7B1C16;font-size:18px;}
+.footer-note{
+  text-align:center;
+  font-size:11px;
+  color:#a99b8f;
+  margin-top:22px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="hdr">
+    <div class="eyebrow">Confidențial · Uz intern</div>
+    <div class="title">Dr. Ardeleanu</div>
+    <div class="subtitle">Executive Summary · Iunie 2026</div>
+  </div>
+
+  <div class="body">
+
+    <div id="gate">
+      <p class="desc">
+        Acest raport conține date financiare confidențiale ale clinicii. Introduceți parola pentru a continua.
+      </p>
+      <label class="field-label" for="pw">Parolă</label>
+      <input type="password" id="pw" placeholder="••••••••" autocomplete="off"/>
+      <button class="btn" id="submitBtn">Accesează raportul</button>
+      <div class="error" id="errMsg">Parolă incorectă. Încearcă din nou.</div>
+    </div>
+
+    <div class="links" id="links">
+      <p class="desc" style="margin-bottom:18px;">Acces confirmat. Alege versiunea dorită:</p>
+      <a class="link-card" href="Dr_Ardeleanu_Jun2026_Desktop_V1.html">
+        <div>
+          <div class="link-name">Versiune Desktop</div>
+          <div class="link-sub">Dashboard complet · toate secțiunile</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+      <a class="link-card" href="Dr_Ardeleanu_Jun2026_Mobile_V1.html">
+        <div>
+          <div class="link-name">Versiune Mobil</div>
+          <div class="link-sub">Optimizată pentru telefon</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <div class="footer-note">© 2026 Dr. Ardeleanu · Nu distribuiți acest link</div>
+  </div>
+</div>
+
+<script>
+// Notă: aceasta e o pagină statică găzduită pe GitHub Pages — nu există server,
+// deci parola oferă doar o barieră de bază, nu securitate reală.
+const CORRECT = atob('QXJkZWxlYW51SXVuaWU='); // "ArdeleanuIunie"
+
+const pwInput = document.getElementById('pw');
+const submitBtn = document.getElementById('submitBtn');
+const errMsg = document.getElementById('errMsg');
+const gate = document.getElementById('gate');
+const links = document.getElementById('links');
+
+function tryUnlock(){
+  if(pwInput.value === CORRECT){
+    gate.style.display = 'none';
+    links.classList.add('show');
+    errMsg.classList.remove('show');
+  } else {
+    errMsg.classList.add('show');
+    pwInput.value = '';
+    pwInput.focus();
+  }
+}
+
+submitBtn.addEventListener('click', tryUnlock);
+pwInput.addEventListener('keydown', function(e){
+  if(e.key === 'Enter') tryUnlock();
+});
+pwInput.focus();
+</script>
+
+</body>
+</html>
